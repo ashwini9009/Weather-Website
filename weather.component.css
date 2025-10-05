@@ -1,0 +1,161 @@
+/* 🌌 Background image - dynamic from Angular */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/default.jpg') no-repeat center center/cover;
+  z-index: -1;
+  filter: brightness(0.7);
+}
+
+/* 🌟 Center container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* ✨ Heading animation */
+.container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.6);
+  animation: slideDown 1s ease;
+}
+
+/* 🔎 Input field */
+.container input {
+  padding: 12px 15px;
+  width: 260px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.container input:focus {
+  box-shadow: 0 0 12px #00c6ff;
+  transform: scale(1.05);
+}
+
+/* 🎯 Button */
+.container button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.container button:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  transform: scale(1.1);
+}
+
+/* ⚠️ Error message */
+.error {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255, 50, 50, 0.85);
+  border-radius: 6px;
+  font-weight: 500;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* 🌈 Weather result card (Glass + Glow) */
+.weather-result {
+  margin-top: 30px;
+  padding: 25px;
+  width: 90%;
+  max-width: 360px;
+  border-radius: 20px;
+  background: rgba(8, 8, 8, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  animation: slideUp 1s ease;
+}
+
+.weather-result h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+}
+
+.weather-result p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #f8f8f8;
+  transition: transform 0.3s;
+}
+
+.weather-result p:hover {
+  transform: translateX(5px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .container input {
+    width: 200px;
+  }
+
+  .weather-result {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+/* 🎬 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
